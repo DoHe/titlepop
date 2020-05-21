@@ -1,0 +1,10 @@
+{
+    "contextMenuItem": {
+        "message": "Title-/Alt-Text rauspoppen",
+        "description": "Context menu item description"
+    },
+    "extensionDescription": {
+        "message": "Zeige den vollständigen Title- bzw. Alt-Text in einem Popup an",
+        "description": "The description of the extension"
+    }
+}

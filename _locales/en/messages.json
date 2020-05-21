@@ -1,0 +1,10 @@
+{
+    "contextMenuItem": {
+        "message": "Pop title/alt text",
+        "description": "Context menu item description"
+    },
+    "extensionDescription": {
+        "message": "Show full title or alt text in a popup",
+        "description": "The description of the extension"
+    }
+}

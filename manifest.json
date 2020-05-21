@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "TitlePop",
+    "version": "1.0",
+    "description": "__MSG_extensionDescription__",
+    "default_locale": "en",
+    "icons": {
+        "48": "icons/48.png",
+        "96": "icons/96.png"
+    },
+    "permissions": [
+        "activeTab",
+        "menus"
+    ],
+    "background": {
+        "scripts": [
+            "scripts/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.xkcd.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
