@@ -1,6 +1,6 @@
 {
   "name": "titlepop",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "scripts/background.js",
   "author": "DoHe",
   "devDependencies": {
@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "web-ext run --source-dir ./",
+    "android": "web-ext run --target=firefox-android",
     "build": "web-ext build",
     "lint": "web-ext lint"
   }

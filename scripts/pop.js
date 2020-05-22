@@ -1,9 +1,9 @@
 function pop() {
   function modalHtml(content) {
     return `
-  <div class="titlepop-modal titlepop-show-modal">
+  <div class="js-titlepop-context-modal titlepop-modal titlepop-show-modal">
   <div class="titlepop-modal-content">
-      <span class="titlepop-close-button">&times;</span>
+      <span class="js-titlepop-context-close-button titlepop-close-button">&times;</span>
       <h1>${content}</h1>
   </div>
   </div>
@@ -55,9 +55,8 @@ function pop() {
 
   const image = browser.menus.getTargetElement(targetElementId);
 
-  let modal = document.querySelector('.titlepop-modal');
+  let modal = document.querySelector('.js-titlepop-context-modal');
   if (modal) {
-    console.log('already there');
     modal.classList.add('titlepop-show-modal');
   } else {
     const cssNode = document.createElement('style');
@@ -69,9 +68,9 @@ function pop() {
     modalNode.innerHTML = modalHtml(image.title);
     document.body.appendChild(modalNode);
 
-    modal = document.querySelector('.titlepop-modal');
+    modal = document.querySelector('.js-titlepop-context-modal');
 
-    const closeButton = document.querySelector('.titlepop-close-button');
+    const closeButton = document.querySelector('.js-titlepop-context-close-button');
 
     function toggleModal() {
       modal.classList.toggle('titlepop-show-modal');
