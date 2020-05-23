@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TitlePop Settings</title>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        TitlePop Settings
+      </h1>
+
+      <form>
+        <div class="field">
+          <label class="label">Minimum width</label>
+          <div class="control">
+            <input class="input js-width" type="number" placeholder="Minimum width">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Minimum height</label>
+          <div class="control">
+            <input class="input js-height" type="number" placeholder="Minimum height">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Show in popup</label>
+          <div class="control">
+            <label class="radio">
+              <input class="js-title" type="radio" name="title_alt">
+              Title
+            </label>
+            <label class="radio">
+              <input class="js-alt" type="radio" name="title_alt">
+              Alt
+            </label>
+            <label class="radio">
+              <input class="js-both" type="radio" name="title_alt">
+              Both
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-link" type="submit">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script src="settings.js"></script>
+</body>
+
+</html>

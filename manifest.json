@@ -10,11 +10,12 @@
     },
     "permissions": [
         "activeTab",
-        "menus"
+        "menus",
+        "storage"
     ],
     "background": {
         "scripts": [
-            "scripts/background.js"
+            "background/init.js"
         ]
     },
     "content_scripts": [
@@ -23,8 +24,22 @@
                 "<all_urls>"
             ],
             "js": [
-                "scripts/content.js"
-            ]
+                "content/pop.js"
+            ],
+            "css": [
+                "content/modal.css"
+            ],
+            "run_at": "document_idle"
         }
-    ]
+    ],
+    "options_ui": {
+        "page": "settings/settings.html",
+        "open_in_tab": true,
+        "browser_style": false
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{5acb2c0f-7943-4c9d-b8d3-8e3bbf4157b8}"
+        }
+    }
 }

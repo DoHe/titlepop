@@ -14,7 +14,7 @@ function clicked(info, tab) {
     browser.tabs.executeScript(tab.id,
       {
         frameId: info.frameId,
-        file: '/scripts/pop.js',
+        file: '/background/pop.js',
       });
   });
 }

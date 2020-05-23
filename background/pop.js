@@ -1,10 +1,11 @@
-function pop() {
-  function modalHtml(content) {
+function pop(titleAlt) {
+  function modalHtml(title, alt) {
     return `
   <div class="js-titlepop-context-modal titlepop-modal titlepop-show-modal">
   <div class="titlepop-modal-content">
       <span class="js-titlepop-context-close-button titlepop-close-button">&times;</span>
-      <h1>${content}</h1>
+      <h2>${title}</h2>
+      <h2>${alt}</h2>
   </div>
   </div>
   `;
@@ -65,7 +66,15 @@ function pop() {
     document.head.appendChild(cssNode);
 
     const modalNode = document.createElement('div');
-    modalNode.innerHTML = modalHtml(image.title);
+    let title = '';
+    if (titleAlt === 'title' || titleAlt === 'both') {
+      title = image.title;
+    }
+    let alt = '';
+    if (titleAlt === 'alt' || titleAlt === 'both') {
+      alt = image.alt;
+    }
+    modalNode.innerHTML = modalHtml(title, alt);
     document.body.appendChild(modalNode);
 
     modal = document.querySelector('.js-titlepop-context-modal');
@@ -87,4 +96,13 @@ function pop() {
   }
 }
 
-pop();
+function start() {
+  const getting = browser.storage.sync.get('titleAlt');
+  getting.then(({ titleAlt }) => {
+    pop(titleAlt);
+  }, (error) => {
+    console.log(`Error: ${error}`);
+  });
+}
+
+start();
